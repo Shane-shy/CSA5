@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 1</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 'I'm going to take a trip to Daocheng on May Day.'
+    let str = "I'm?���going�??�to�?�take�??�a?�trip�?�to��?daocheng�?�on��May Day."
+    let uP = /\?\w/
+    let regex = /[^'.a-zA-Z]+/g;
+    str = str.replace(uP, (e) => e.toUpperCase())
+    str = str.replace(regex, ' ')
+    console.log(str);
+</script>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 2</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // // 改造代码一： 
+    // for (var i = 0; i < 5; i++) {
+    //     (function(i) {
+    //         setTimeout(function() {
+    //             console.log(new Date, i);
+    //         }, 1000);
+    //     })(i);
+    // }
+    // console.log(new Date, i);
+
+
+    // 改造代码二：
+    for (var i = 0; i < 5; i++) { //收获：定时器在任务队列里的计时是同时进行的
+        (function fn(i) {
+            setTimeout(function() {
+                console.log(new Date, i);
+            }, 1000 * i);
+        })(i);
+    }
+    setTimeout(function() {
+        console.log(new Date, i);
+    }, i * 1000)
+</script>
+
+</html>
